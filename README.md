@@ -12,6 +12,10 @@ Some Unicode characters are [fullwidth](https://en.wikipedia.org/wiki/Halfwidth_
 
 Useful to be able to break the string into lines according to visual width(the number of columns) in the terminal.
 
+Inspired by:
+
+- [string-width](https://github.com/sindresorhus/string-width) - Get visual width of a string
+- [string-length](https://github.com/sindresorhus/string-length) - Get the real length of a string
 
 ## Install 
 
