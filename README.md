@@ -1,6 +1,6 @@
 # break-string
 
-> Break string to lines according to visual width.
+> Break string into lines according to visual width.
 
 [![MIT License](https://img.shields.io/badge/license-MIT_License-green.svg?style=flat-square)](https://github.com/bubkoo/break-string/blob/master/LICENSE)
 
