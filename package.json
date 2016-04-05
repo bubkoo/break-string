@@ -1,0 +1,66 @@
+{
+  "name": "break-string",
+  "version": "0.0.1",
+  "description": "Break string to lines according to visual width",
+  "main": "index.js",
+  "scripts": {
+    "lint": "jshint index.js",
+    "pretest": "npm run lint",
+    "test": "mocha -R spec",
+    "test:cov": "rm -rf ./test/coverage && istanbul cover _mocha --dir ./test/coverage -- -R spec",
+    "test:rpt": "npm run test:cov && coveralls < ./test/coverage/lcov.info",
+    "prepublish": "npm test"
+  },
+  "author": {
+    "name": "bubkoo",
+    "email": "bubkoo.wy@gmail.com"
+  },
+  "license": "MIT",
+  "keywords": [
+    "break",
+    "string",
+    "fixed-width",
+    "korean",
+    "japanese",
+    "chinese",
+    "cjk",
+    "console",
+    "terminal",
+    "command-line",
+    "cli",
+    "codes",
+    "escape",
+    "ansi",
+    "full",
+    "full-width",
+    "fullwidth",
+    "columns",
+    "column",
+    "visual",
+    "width",
+    "unicode",
+    "char",
+    "character",
+    "str"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bubkoo/break-string.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bubkoo/break-string/issues"
+  },
+  "homepage": "https://github.com/bubkoo/break-string#readme",
+  "dependencies": {
+    "ansi-regex": "^2.0.0",
+    "code-point-at": "^1.0.0",
+    "is-fullwidth-code-point": "^1.0.0"
+  },
+  "devDependencies": {
+    "chalk": "^1.1.3",
+    "coveralls": "^2.11.9",
+    "istanbul": "^0.4.2",
+    "jshint": "^2.9.1",
+    "mocha": "^2.4.5"
+  }
+}
