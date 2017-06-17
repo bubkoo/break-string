@@ -6,7 +6,7 @@ var isFullwidth = require('is-fullwidth-code-point');
 
 var NL = '\n';
 
-function breakStr(str, maxWidth) {
+function breakStr(str, maxWidth, wordStop) {
 
   var backup = [];
 
@@ -25,9 +25,10 @@ function breakStr(str, maxWidth) {
   var lines = [];
   var start = 0;
   var width = 0;
+  var length = str.length;
 
   // detect width char by char
-  for (var i = 0; i < str.length; i++) {
+  for (var i = 0; i < length; i++) {
     var code = codePointAt(str, i);
 
     // surrogate pair
@@ -43,6 +44,17 @@ function breakStr(str, maxWidth) {
     }
 
     if (width >= maxWidth) {
+      /*
+       * we are over the max width but we
+       * want to find the next word stop, or
+       * white space.
+       */
+      if(wordStop){
+        while(str[i] !== ' ' && i < length) {
+          ++i;
+        }
+      }
+
       lines.push(str.substring(start, i + 1));
       start = i + 1;
       width = 0;
